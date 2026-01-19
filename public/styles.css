@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Courier New", Courier, monospace;
+}
+
+:root {
+    --background: #222526;
+    --main-text: #f6f0e9;
+    --sec-text: #53595c;
+}
+
+.heading {
+    margin-bottom: 2rem;
+}
+
+body {
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding: 1rem;
+}
+
+.messages,
+.new-msg-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+input,
+textarea {
+    border: none;
+    border-bottom: 1px solid var(--sec-text);
+    background-color: inherit;
+    font-size: 1rem;
+    padding: 0.2rem 0;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-bottom: 2px solid hotpink;
+}
+
+button {
+    border: none;
+    font-size: 1.3rem;
+    background-color: transparent;
+    margin: 1rem 0;
+    width: fit-content;
+}
+
+button:hover {
+    color: hotpink;
+}
+
+nav {
+    padding: 1rem;
+}
+
+ul {
+    list-style: none;
+    text-decoration: none;
+    color: var(--main-text);
+    display: flex;
+    justify-content: space-around;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+
+    display: block;
+    position: relative;
+    padding: 0.2rem 0;
+}
+
+a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1rem;
+    background-color: hotpink;
+    opacity: 0;
+    transition:
+        opacity 300ms,
+        transform 300ms;
+}
+
+a:hover::after,
+a:focus::after {
+    opacity: 1;
+    transform: translate3d(0, 0.2rem, 0);
+}
+
+li a::after {
+    opacity: 1;
+    transform: scale(0);
+    transform-origin: center;
+}
+
+li a:hover::after,
+li a:focus::after {
+    transform: scale(1);
+}
+
+.msg-header {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.msg-name {
+    color: hotpink;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.msg-date {
+    color: var(--sec-text);
+    font-size: 13px;
+}

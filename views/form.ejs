@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <title>New Message</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <main class="content">
+        <h1 class="heading">New Message</h1>
+
+        <%- include('navbar', {links:links}) %>
+
+            <form action="/new" method="POST" class="new-msg-form">
+                <label class="input-group">
+                    Name
+                    <input required placeholder="Ruben" class="msg-input-field" name="messageName" type="text">
+                </label>
+                <label class="input-group">
+                    Text
+                    <textarea rows="5" required placeholder="What's on your mind?" class="msg-input-field"
+                        name="messageText"></textarea>
+                </label>
+                <button type="submit">Submit</button>
+            </form>
+    </main>
+
+</body>
+
+</html>

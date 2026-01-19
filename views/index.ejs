@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>Messages</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <main class="content">
+        <h1 class="heading">
+            <%= title %>
+        </h1>
+
+        <%- include('navbar', {links: links}) %>
+
+            <div class="messages">
+                <% messages.forEach(msg=> { %>
+                    <div class="message-block">
+                        <div class="msg-header">
+                            <p class="msg-name">
+                                <%= msg.user%>
+                            </p>
+                            <time datetime="<%= msg.added.toISOString() %>" class="msg-date">
+                                <%= new Intl.DateTimeFormat("en-GB", { day: "2-digit" , month: "2-digit" ,
+                                    year: "numeric" , hour: "2-digit" , minute: "2-digit" , second: "2-digit" , hour12:
+                                    true }).format(msg.added) %>
+                            </time>
+                        </div>
+                        <div class="message-text">
+                            <p class="msg-text">
+                                <%= msg.text%>
+                            </p>
+                        </div>
+                    </div>
+
+                    <% }); %>
+            </div>
+    </main>
+
+
+</body>
+
+</html>
