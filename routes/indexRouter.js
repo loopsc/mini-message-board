@@ -5,7 +5,7 @@ const indexRouter = Router();
 
 indexRouter.get("/", (req, res) => {
     res.render("index", {
-        title: "Messageboard",
+        title: "Message Board",
         messages: messages,
     });
 });
