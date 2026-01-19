@@ -11,7 +11,10 @@ app.use(express.static(assetsPath));
 // Parse form data
 app.use(express.urlencoded({ extended: true }));
 
-
+app.locals.links = [
+    { href: "/", text: "Home Feed" },
+    { href: "/new", text: "New Message" },
+];
 
 app.use("/", indexRouter);
 

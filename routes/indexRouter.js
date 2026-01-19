@@ -2,21 +2,23 @@ const { Router } = require("express");
 const { messages } = require("../db");
 const indexRouter = Router();
 
-const links = [
-    { href: "/", text: "Home Feed" },
-    { href: "/new", text: "New Message" },
-];
-
 indexRouter.get("/", (req, res) => {
     res.render("index", {
         title: "Mini Messageboard",
         messages: messages,
-        links: links,
     });
 });
-indexRouter.get("/new", (req, res) => {
-    res.render("form", { links: links });
+
+indexRouter.get("/messages/:messageId", (req, res) => {
+    res.render("message", {
+        messageId: req.params.messageId,
+    });
 });
+
+indexRouter.get("/new", (req, res) => {
+    res.render("form");
+});
+
 indexRouter.post("/new", (req, res) => {
     let messageName = req.body.messageName;
     let messageText = req.body.messageText;

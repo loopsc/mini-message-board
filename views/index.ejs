@@ -15,7 +15,7 @@
 
             <div class="messages">
                 <% messages.forEach(msg=> { %>
-                    <div class="message-block">
+                    <div class="msg-block">
                         <div class="msg-header">
                             <p class="msg-name">
                                 <%= msg.user%>
@@ -26,8 +26,8 @@
                                     true }).format(msg.added) %>
                             </time>
                         </div>
-                        <div class="message-text">
-                            <p class="msg-text">
+                        <div class="msg-text">
+                            <p>
                                 <%= msg.text%>
                             </p>
                         </div>

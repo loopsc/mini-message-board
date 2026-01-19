@@ -8,17 +8,27 @@
 :root {
     --background: #222526;
     --main-text: #f6f0e9;
-    --sec-text: #53595c;
+    --sec-text: #858e92;
 }
 
 .heading {
     margin-bottom: 2rem;
+    color: var(--main-text);
 }
 
 body {
     margin: 1rem;
     display: flex;
     justify-content: center;
+    background-color: var(--background);
+}
+
+p,
+label,
+input,
+textarea,
+button {
+    color: var(--main-text);
 }
 
 .content {
@@ -32,7 +42,7 @@ body {
 .new-msg-form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
     margin-top: 2rem;
 }
 
@@ -40,6 +50,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
+    padding: 0.2rem 0.2rem;
 }
 
 input,
@@ -130,10 +141,19 @@ li a:focus::after {
 .msg-name {
     color: hotpink;
     font-weight: 500;
-    font-size: 17px;
+    font-size: 1.1rem;
 }
 
 .msg-date {
     color: var(--sec-text);
     font-size: 13px;
+}
+
+.msg-block {
+    padding: 1rem 0.2rem;
+}
+
+.msg-block:hover {
+    background-color: rgb(65, 65, 65);
+    cursor: pointer;
 }
