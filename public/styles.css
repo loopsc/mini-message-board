@@ -80,6 +80,7 @@ button {
 
 button:hover {
     color: hotpink;
+    cursor: pointer;
 }
 
 nav {
@@ -137,7 +138,7 @@ li .nav-link:focus::after {
 .msg-header {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 20px;
 }
 
 .msg-name {
