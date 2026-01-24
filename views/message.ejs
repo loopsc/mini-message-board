@@ -14,7 +14,7 @@
             <div class="msg-details">
                 <div class="msg-header">
                     <h1>
-                        <%= message.user %>
+                        <%= message.username %>
                     </h1>
                     <time datetime="<%= message.added.toISOString() %>" class="msg-date">
                         <%= new Intl.DateTimeFormat("en-GB", { day: "2-digit" , month: "2-digit" , year: "numeric" ,
@@ -26,7 +26,7 @@
                     <%= message.text %>
                 </p>
             </div>
-            
+
     </main>
 </body>
 

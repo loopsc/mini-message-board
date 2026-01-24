@@ -21,7 +21,7 @@ async function getAllMessages(req, res) {
 }
 
 async function getMessageById(req, res) {
-    const message = await db.getMessagesById(req.params.messageId);
+    const message = await db.getMessageById(req.params.messageId);
 
     if (!message) return res.status(404).send("Message not found");
 
